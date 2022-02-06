@@ -4,6 +4,53 @@
     <title>Web JS</title>
 </head>
 <body>
-    <h1>Edited Text</h1>
+    <center>
+        <h1>JavaScript Sandbox</h1>
+  
+        <h3>Generate hexadecimal hash from string in JavaScript</h3>
+
+        <p id="text"></p>
+  
+        <p id="hash"></p>
+  
+        <script>
+          
+            // // Convert to 32bit integer
+            // function stringToHash(s){
+            // /* Simple hash function. */
+            // let a = 1, c = 0, h, o;
+            // if (s) {
+            //     a = 0;
+            //     /*jshint plusplus:false bitwise:false*/
+            //     for (h = s.length - 1; h >= 0; h--) {
+            //         o = s.charCodeAt(h);
+            //         a = (a<<6&268435455) + o + (o<<14);
+            //         c = a & 266338304;
+            //         a = c!==0?a^c>>21:a;
+            //         }
+            // }
+            // const stringHash =  "0x" + a
+            // return String(stringHash);
+            // };
+        function ascii_to_hexa(str)
+        {
+	        var arr1 = [];
+	        for (var n = 0, l = str.length; n < l; n ++) 
+            {
+		    var hex = Number(str.charCodeAt(n)).toString(16);
+		    arr1.push(hex);
+	        }
+	        return "0x" + arr1.join('');
+        }
+        const input = prompt("Generate hex from: ")
+        // String printing in hash
+        const hash = input.toString()
+        document.getElementById("text").innerHTML
+                        = "Convert '" + input + "' to hex";
+              
+        document.getElementById("hash").innerHTML
+                        = ascii_to_hexa(hash);
+        </script>
+    </center>
 </body>
 </html>
